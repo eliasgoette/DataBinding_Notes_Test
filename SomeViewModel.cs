@@ -22,8 +22,13 @@ namespace DataBinding_Notes_Test
 
         public string SomeTextProperty
         {
-            get { return Model.SomeTextProperty; }
-            set { Model.SomeTextProperty = value; }
+            get { 
+                return Model.SomeTextProperty; 
+            }
+            set { 
+                Model.SomeTextProperty = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SomeTextProperty)));
+            }
         }
 
         public ICommand ClearTextCommand { get; }

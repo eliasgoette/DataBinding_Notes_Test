@@ -19,6 +19,7 @@ namespace DataBinding_Notes_Test
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new SomeViewModel();
         }
     }
 }
