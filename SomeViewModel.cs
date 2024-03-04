@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Windows.Input;
 
 namespace DataBinding_Notes_Test
@@ -13,6 +8,25 @@ namespace DataBinding_Notes_Test
         public event PropertyChangedEventHandler? PropertyChanged;
 
         private SomeModel Model = new();
+
+        public SomeViewModel()
+        {
+            ClearTextCommand = new RelayCommand(
+                () =>
+                {
+                    Model.ClearText();
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SomeTextProperty)));
+                }
+            );
+        }
+
+        public string SomeTextProperty
+        {
+            get { return Model.SomeTextProperty; }
+            set { Model.SomeTextProperty = value; }
+        }
+
+        public ICommand ClearTextCommand { get; }
     }
 
     public class RelayCommand : ICommand
