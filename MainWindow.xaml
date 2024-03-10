@@ -11,10 +11,10 @@
             <Label Content="One-Way Readonly" HorizontalAlignment="Left" Margin="20, 10" VerticalAlignment="Top"/>
             <TextBox x:Name="TxtOneWay" Text="{Binding Path=SomeTextProperty, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Margin="20, 10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
-        <Button x:Name="CmdOneWay" Command="{Binding ClearTextCommand}" Content="One-Way Writeonly" HorizontalAlignment="Center" Margin="0,194,0,0" VerticalAlignment="Top"/>
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,100,0,0">
             <Label Content="Two-Way" HorizontalAlignment="Left" Margin="20, 10" VerticalAlignment="Top"/>
             <TextBox x:Name="TxtTwoWay" Text="{Binding Path=SomeTextProperty, Mode=TwoWay}" HorizontalAlignment="Left" Margin="20, 10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
+        <Button x:Name="CmdOneWay" Command="{Binding ClearTextCommand}" Content="One-Way Writeonly" HorizontalAlignment="Center" Margin="0,194,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
